@@ -6,7 +6,7 @@ using TMPro;
 
 public class StoryManager : MonoBehaviour
 {
-    public PointManager PointManager;
+    public PointManager pointManager;
 
     public GameObject storyCanvas;
     public GameObject theEnd;
@@ -15,22 +15,22 @@ public class StoryManager : MonoBehaviour
 
     public GameObject dialogue1Set;
     public GameObject[] dialogue1;
-    public bool PlayedDialogue1 = false;
+    public bool playedDialogue1 = false;
 
     public GameObject dialogue2Set;
     public GameObject[] dialogue2;
-    public bool PlayedDialogue2 = false;
+    public bool playedDialogue2 = false;
 
     public GameObject dialogue3Set;
     public GameObject[] dialogue3;
-    public bool PlayedDialogue3 = false;
+    public bool playedDialogue3 = false;
 
     public GameObject losePanel;
     public GameObject endPanel;
     public GameObject greedPanel;
 
-    public int CurrentText;
-    public float EndAmount;
+    public int currentText;
+    public float endAmount;
     public int dialogue1Thresh;
     public int dialogue2Thresh;
     public int dialogue3Thresh;
@@ -44,9 +44,9 @@ public class StoryManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(PointManager.points <= EndAmount)
+        if(pointManager.points <= endAmount)
         {
-            theEndBar.fillAmount = PointManager.points / EndAmount;
+            theEndBar.fillAmount = pointManager.points / endAmount;
         }
         else
         {
@@ -54,13 +54,13 @@ public class StoryManager : MonoBehaviour
             greedPanel.SetActive(true);
         }
 
-        if(PointManager.points >= dialogue2Thresh && PlayedDialogue2 == false && PlayedDialogue1 == true)
+        if(pointManager.points >= dialogue2Thresh && playedDialogue2 == false && playedDialogue1 == true)
         {
             storyCanvas.SetActive(true);
             dialogue2Set.SetActive(true);
             theEnd.SetActive(true);
         }
-        if (PointManager.points >= dialogue3Thresh && PlayedDialogue3 == false && PlayedDialogue2 == true)
+        if (pointManager.points >= dialogue3Thresh && playedDialogue3 == false && playedDialogue2 == true)
         {
             storyCanvas.SetActive(true);
             dialogue3Set.SetActive(true);
@@ -70,11 +70,11 @@ public class StoryManager : MonoBehaviour
 
     public void Continue1()
     {
-        CurrentText += 1;
-        if (CurrentText < dialogue1.Length)
+        currentText += 1;
+        if (currentText < dialogue1.Length)
         {
-            dialogue1[CurrentText - 1].SetActive(false);
-            dialogue1[CurrentText].SetActive(true);
+            dialogue1[currentText - 1].SetActive(false);
+            dialogue1[currentText].SetActive(true);
         }
         else
         {
@@ -84,18 +84,18 @@ public class StoryManager : MonoBehaviour
             }
             dialogue1Set.SetActive(false);
             storyCanvas.SetActive(false);
-            CurrentText = 0;
-            PlayedDialogue1 = true;
+            currentText = 0;
+            playedDialogue1 = true;
         }
     }
 
     public void Continue2()
     {
-        CurrentText += 1;
-        if (CurrentText < dialogue2.Length)
+        currentText += 1;
+        if (currentText < dialogue2.Length)
         {
-            dialogue2[CurrentText - 1].SetActive(false);
-            dialogue2[CurrentText].SetActive(true);
+            dialogue2[currentText - 1].SetActive(false);
+            dialogue2[currentText].SetActive(true);
         }
         else
         {
@@ -105,18 +105,18 @@ public class StoryManager : MonoBehaviour
             }
             dialogue2Set.SetActive(false);
             storyCanvas.SetActive(false);
-            CurrentText = 0;
-            PlayedDialogue2 = true;
+            currentText = 0;
+            playedDialogue2 = true;
         }
     }
 
     public void Continue3()
     {
-        CurrentText += 1;
-        if (CurrentText < dialogue3.Length)
+        currentText += 1;
+        if (currentText < dialogue3.Length)
         {
-            dialogue3[CurrentText - 1].SetActive(false);
-            dialogue3[CurrentText].SetActive(true);
+            dialogue3[currentText - 1].SetActive(false);
+            dialogue3[currentText].SetActive(true);
         }
         else
         {
@@ -126,8 +126,8 @@ public class StoryManager : MonoBehaviour
             }
             dialogue3Set.SetActive(false);
             storyCanvas.SetActive(false);
-            CurrentText = 0;
-            PlayedDialogue3 = true;
+            currentText = 0;
+            playedDialogue3 = true;
         }
     }
 

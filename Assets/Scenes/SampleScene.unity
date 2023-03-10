@@ -1066,7 +1066,7 @@ GameObject:
   - component: {fileID: 454591454}
   - component: {fileID: 454591453}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: GreedText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2095,7 +2095,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94bbe9354a3bda342b2f10a58466c51c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PointManager: {fileID: 963194229}
+  pointManager: {fileID: 0}
   storyCanvas: {fileID: 1963630978}
   theEnd: {fileID: 1323127891}
   endButton: {fileID: 962005369}
@@ -2103,23 +2103,23 @@ MonoBehaviour:
   dialogue1Set: {fileID: 1837757537}
   dialogue1:
   - {fileID: 1063759910}
-  PlayedDialogue1: 0
+  playedDialogue1: 0
   dialogue2Set: {fileID: 981628133}
   dialogue2:
   - {fileID: 1224323872}
   - {fileID: 1536746869}
   - {fileID: 1466950079}
-  PlayedDialogue2: 0
+  playedDialogue2: 0
   dialogue3Set: {fileID: 271240795}
   dialogue3:
   - {fileID: 100159326}
   - {fileID: 186605946}
-  PlayedDialogue3: 0
+  playedDialogue3: 0
   losePanel: {fileID: 589960326}
   endPanel: {fileID: 1340916891}
   greedPanel: {fileID: 1759853082}
-  CurrentText: 0
-  EndAmount: 1000
+  currentText: 0
+  endAmount: 0
   dialogue1Thresh: 0
   dialogue2Thresh: 200
   dialogue3Thresh: 500
@@ -2647,7 +2647,7 @@ GameObject:
   - component: {fileID: 1133700678}
   - component: {fileID: 1133700677}
   m_Layer: 5
-  m_Name: Text (TMP) (1)
+  m_Name: LoseText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3753,7 +3753,7 @@ GameObject:
   - component: {fileID: 1445741500}
   - component: {fileID: 1445741499}
   m_Layer: 5
-  m_Name: Text (TMP) (1)
+  m_Name: EndText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
